@@ -1,0 +1,224 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/ground.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: url(../images/cursor/arrow.cur), default;
+    text-shadow: 0px 0px 13px #000,0px -1px 2px #fff, 0px 1px 2px #000;
+    color: white;
+}
+
+.resize {
+    cursor: url(../images/cursor/sizeall.cur), nesw-resize;
+}
+
+#container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+#menu, #status {
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    outline: 6px groove grey;
+    background-color: rgb(65, 200, 230);
+    margin: 4px;
+    z-index: 100;
+}
+
+    #menu div, #status > div {
+        float: left;
+        width: 16.6666666667%;
+        height: 100%;
+        text-align: center;
+        outline: 1px inset lightgrey;
+        background-size: 80%;
+        background-position: 41% 27px;
+        background-repeat: no-repeat;
+    }
+
+    #status > div {
+        background-size: cover;
+        background-position: 0 27px;
+        background-repeat: no-repeat;
+    }
+
+        #menu div:hover, #status > div:hover {
+            background-color: rgba(0, 255, 255, 0.5) !important;
+            transition: 0.6s;
+        }
+
+        #menu div:active, #status > div:active {
+            background-color: rgba(255, 255, 0, 0.5) !important;
+            transition: 0;
+        }
+
+#status {
+    /*display: inline;*/
+    right: 0;
+    bottom: 0;
+}
+
+#system {
+    position: absolute;
+    right: 0;
+}
+
+#grid {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    left: 50%;
+    top: 50%;
+    margin-top: -400px;
+    margin-left: -400px;
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg);
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+    -ms-transform: rotate(-45deg) skew(15deg, 15deg);
+    transform: rotate(-45deg) skew(15deg, 15deg);
+    /*background-image: url("../images/ground.png");
+  background-size: 100% 100%;*/
+}
+
+.tile {
+    float: left;
+    width: 10%;
+    height: 10%;
+    outline: 1px ridge rgba(121, 121, 121, 0.8);
+    transition: 1s;
+}
+
+    .tile:hover {
+        background-color: rgba(0, 255, 255, 0.1);
+        outline: 2px ridge rgba(0, 255, 255, 0.8);
+        transition: 0.8s;
+    }
+
+    .tile.active {
+        background-color: rgba(0, 255, 0, 0.1);
+        outline: 2px ridge rgba(0, 255, 0, 0.8);
+    }
+
+    .tile img {
+        margin-top: -17.5%;
+        margin-left: 13.5%;
+        width: 90%;
+        height: 117%;
+        /*Reverse ISO*/
+        -moz-transform: rotate(45deg) skew(0, 0);
+        -webkit-transform: rotate(45deg) skew(0, 0);
+        -ms-transform: rotate(45deg) skew(0, 0);
+        transform: rotate(45deg) skew(0, 0);
+    }
+
+#movie div {
+    background: black;
+    opacity: 1;
+    background-size: 250% 250%;
+    background-position: 100% 50%;
+    -webkit-filter: grayscale(100%) brightness(0%) blur(30px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    transition: 30s ease-in-out, -webkit-filter 30s ease-in-out, z-index 0s;
+}
+
+#movie #screen3 {
+    -webkit-filter: none;
+}
+
+.resource > div {
+    padding-top: 20px;
+    font-size: large;
+    font-weight: bolder;
+    color: red;
+    -webkit-text-stroke: 1px #000;
+}
+
+.submarine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 62px;
+    background-image: url(../images/objects/submarineBR.png);
+    background-size: 100% 100%;
+    z-index: 10;
+    -webkit-transition: left 20s ease-out, top 20s ease-out;
+    -moz-transition: left 20s ease-out, top 20s ease-out;
+    -ms-transition: left 20s ease-out, top 20s ease-out;
+    transition: left 20s ease-out, top 20s ease-out;
+}
+
+    .submarine.top {
+        background-image: url(../images/objects/submarineTR.png);
+    }
+
+    .submarine.right {
+        background-image: url(../images/objects/submarineBR.png);
+    }
+
+    .submarine.down {
+        background-image: url(../images/objects/submarineBR.png);
+    }
+
+    .submarine.left {
+        background-image: url(../images/objects/submarineBL.png);
+    }
+
+    .submarine.top.right {
+        background-image: url(../images/objects/submarineTR.png);
+    }
+
+    .submarine.top.left {
+        background-image: url(../images/objects/submarineTL.png);
+    }
+
+    .submarine.down.right {
+        background-image: url(../images/objects/submarineBR.png);
+    }
+
+    .submarine.down.left {
+        background-image: url(../images/objects/submarineBL.png);
+    }
+
+.log1 {
+    position: absolute;
+    bottom: 20px;
+}
+
+.log2 {
+    position: absolute;
+    bottom: 0;
+}
+
+.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5%;
+    margin-left: -8%;
+    width: 16%;
+    height: 10%;
+    min-height: 100px;
+    min-width: 200px;
+    background: rgba(255, 80, 20, 0.8);
+    z-index: 10000;
+}
