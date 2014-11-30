@@ -199,14 +199,24 @@ function demolish(type) {
     resources[buildings[type][0]][0] -= buildings[type][1];
 }
 
-
-// Sub has arrived!
-$(document).on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
+$(document).on('transitionend',
 function (event) {
     var $target = $(event.target);
+    // Submarine.
     if ($target.hasClass("submarine") && event.originalEvent.propertyName === 'top') { // Keep from firing for each attr.
-        console.log(event.type + " " + new Date().getTime());
+        console.log("Submarine: " + event.type + " " + new Date().getTime());
         alert("Sub has arrived!");
+    }
+});
+
+$(document).on('animationend webkitAnimationEnd',
+function (event) {
+    var $target = $(event.target);
+    // Explosion.
+    if ($target.hasClass("explosion")) {
+        console.log("Explosion: " + event.type + " " + new Date().getTime());
+        $target.remove();
+        alert("Boom!");
     }
 });
 
