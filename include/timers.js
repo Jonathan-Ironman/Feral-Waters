@@ -8,5 +8,6 @@
             document.getElementById(key).innerHTML = Math.floor(resources[key][1]); // Round down displayed value.
         }
     }
+    // TODO: replace by setInterval as it is more accurate.
     setTimeout(updateLoop, resourceTick);
 }

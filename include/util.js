@@ -1,6 +1,6 @@
 ﻿//--------- Hotkeys & Events ---------//
 $(document).keyup(function (event) {
-    var enter = 13, esc = 27, left = 37, up = 38, right = 39, down = 40, M = 77, F9 = 120, del = 46;
+    var enter = 13, esc = 27, space = 32, left = 37, up = 38, right = 39, down = 40, M = 77, F9 = 120, del = 46;
 
     switch (event.which) {
         case enter:
@@ -33,7 +33,8 @@ $(document).keyup(function (event) {
             location.reload();
             break;
         case del:
-
+            break;
+        case space:
             break;
         default:
             return;

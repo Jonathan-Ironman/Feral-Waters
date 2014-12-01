@@ -75,15 +75,15 @@ function loadGame() {
 }
 
 function restoreSettings() { // Restore saved settings.
-    for (var key in settings) {
-        if (settings.hasOwnProperty(key)) { // key: music players.
-            for (var k in settings[key]) { // k: key.properties.
-                if (settings[key].hasOwnProperty(k)) {
-                    console.log("Restoring: " + key + " " + k + " " + settings[key][k]);
-                    if (k === "volume")
-                        Audio.setVolume(settings[key][k], document.getElementById(key)); // Value, player.
-                    else if (k === "muted" && settings[key][k]) // Muted is true.
-                        Audio.togglePlayers(document.getElementById(key));
+    for (var type in settings) {
+        if (settings.hasOwnProperty(type)) { // type: music players.
+            for (var setting in settings[type]) { // setting: type.properties.
+                if (settings[type].hasOwnProperty(setting)) {
+                    console.log("Restoring: " + type + " " + setting + " " + settings[type][setting]);
+                    if (setting === "volume")
+                        Audio.setVolume(settings[type][setting], document.getElementById(type)); // Value, player.
+                    else if (setting === "muted" && settings[type][setting]) // Muted is true.
+                        Audio.togglePlayers(document.getElementById(type));
                 }
             }
         }
@@ -169,7 +169,7 @@ function deselectAll() {
 
 
 function pay(type) {
-    // Test cost.
+    // Test if there's enough.
     var i = 0;
     for (var key in resources) {
         if (resources.hasOwnProperty(key)) {
@@ -205,18 +205,7 @@ function (event) {
     // Submarine.
     if ($target.hasClass("submarine") && event.originalEvent.propertyName === 'top') { // Keep from firing for each attr.
         console.log("Submarine: " + event.type + " " + new Date().getTime());
-        alert("Sub has arrived!");
-    }
-});
-
-$(document).on('animationend webkitAnimationEnd',
-function (event) {
-    var $target = $(event.target);
-    // Explosion.
-    if ($target.hasClass("explosion")) {
-        console.log("Explosion: " + event.type + " " + new Date().getTime());
-        $target.remove();
-        alert("Boom!");
+        //alert("Sub has arrived!");
     }
 });
 

@@ -10,7 +10,7 @@
 function build(type, target) {
     if (!target) { // Target comes from Load function, these buildings are free.
         if (!activeTile)
-            return; // Nothing selected.
+            return alert("Nothing selected");  // Nothing selected.
         if (activeTile.children().length) // Already has a building.
             return alert("You can't build there!");
         if (!pay(type)) // Pay or return.
