@@ -2,6 +2,7 @@
 HTML/JS based game. Hobby project
 
 ![Screenshot](MISC/Feral-Waters.png?raw=true "Feral Waters")
+Play: http://jonathan-ijzerman.nl/game/
 
 ##Story
 The story is based in a post-apocalyptic world where man lives underwater, as that is one of the few places left where machines don't hunt them.
